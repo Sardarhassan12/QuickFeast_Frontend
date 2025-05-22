@@ -20,7 +20,7 @@ const HomeDashboard = () => {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/items`);
+      const response = await axios.get(`https://quickfeast-backend.railway.app/api/items`);
       setFoodItems(response.data);
     } catch (error) {
       setError('Failed to fetch items. Please try again.');

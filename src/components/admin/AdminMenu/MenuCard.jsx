@@ -14,7 +14,7 @@ const MenuCard = ({ menu, onDelete }) => {
   const handleDelete = async () => {
     if (window.confirm('Are you sure you want to delete this menu?')) {
       try {
-        await axios.delete(`${process.env.REACT_APP_API_URL}/api/menu/${menu._id}`);
+        await axios.delete(`https://quickfeast-backend.railway.app/api/menu/${menu._id}`);
         onDelete();
       } catch (err) {
         console.error('Error deleting menu', err);
@@ -34,7 +34,7 @@ const MenuCard = ({ menu, onDelete }) => {
       return;
     }
     try {
-      const response = await axios.post('http://localhost:3000/api/generate-qr', {
+      const response = await axios.post('https://quickfeast-backend.railway.app/api/generate-qr', {
         menuId: menu._id,
         tableCount: parseInt(tableCount)
       });
@@ -125,7 +125,7 @@ const MenuCard = ({ menu, onDelete }) => {
     <div className="w-[300px] bg-white rounded-xl shadow-lg overflow-hidden relative text-black">
       <div className="h-40 w-full bg-gray-200">
         {menu.image ? (
-          <img src={`http://localhost:3000${menu.image}`} alt="Menu" className="w-full h-full object-cover" />
+          <img src={`https://quickfeast-backend.railway.app${menu.image}`} alt="Menu" className="w-full h-full object-cover" />
         ) : (
           <div className="w-full h-full flex items-center justify-center text-gray-600">No Image</div>
         )}

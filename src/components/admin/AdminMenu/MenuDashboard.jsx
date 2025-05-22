@@ -15,7 +15,7 @@ const MenuDashboard = () => {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/menus`);
+      const response = await axios.get(`https://quickfeast-backend.railway.app/api/menus`);
       setMenus(response.data);
     } catch (err) {
       setError('Failed to fetch menus. Please try again.');

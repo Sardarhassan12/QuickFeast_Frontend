@@ -21,7 +21,7 @@ const Cart = ({ cartItems, onClose, onClearCart, menuId, tableNumber }) => {
         })),
       };
       console.log('Submitting order:', orderData); // Debug log
-      await axios.post(`${process.env.REACT_APP_API_URL}/api/orders`, orderData);
+      await axios.post(`https://quickfeast-backend.railway.app/api/orders`, orderData);
       alert('Order placed successfully!');
       onClearCart();
       onClose();

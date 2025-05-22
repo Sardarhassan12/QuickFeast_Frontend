@@ -12,7 +12,7 @@ const MenuModal = ({ isModal, setIsModal }) => {
   const generateMenu = async () => {
     try {
       const itemIds = allItems.map(item => item._id);
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/menu`, {
+      const response = await axios.post(`https://quickfeast-backend.railway.app/api/menu`, {
         title: 'Main Menu - ' + new Date().toLocaleString(),
         itemIds,
       });

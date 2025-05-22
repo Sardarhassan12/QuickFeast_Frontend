@@ -36,7 +36,7 @@ const UpdateItem = ({ isUpdateModal, setIsUpdateModal, itemData, fetchItems }) =
       }
 
       const response = await axios.patch(
-        `${process.env.REACT_APP_API_URL}/api/item/${itemData._id}`,
+        `https://quickfeast-backend.railway.app/api/item/${itemData._id}`,
         formData,
         {
           headers: {

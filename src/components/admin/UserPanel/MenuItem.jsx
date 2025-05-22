@@ -17,7 +17,7 @@ const MenuItem = ({ item, onAddToCart }) => {
   return (
     <div className="bg-white rounded-xl shadow-md p-4 flex flex-col gap-3 hover:shadow-lg transition-all duration-200">
       <img
-        src={`${process.env.REACT_APP_API_URL}${item.imagePath}`}
+        src={`https://quickfeast-backend.railway.app${item.imagePath}`}
         alt={item.itemName}
         className="w-full h-32 object-cover rounded-lg border border-gray-100"
       />

@@ -15,7 +15,7 @@ function ItemCard({ setIsUpdateModal, setItemData, items }) {
       <div className="w-full h-40 bg-gray-200 flex items-center justify-center">
         {items.imagePath ? (
           <img
-            src={`${process.env.REACT_APP_API_URL}${items.imagePath}`}
+            src={`https://quickfeast-backend.railway.app${items.imagePath}`}
             alt={items.itemName}
             className="w-full h-full object-cover"
           />
