@@ -36,7 +36,7 @@ const UpdateItem = ({ isUpdateModal, setIsUpdateModal, itemData, fetchItems }) =
       }
 
       const response = await axios.patch(
-        `http://localhost:3000/api/item/${itemData._id}`,
+        `${process.env.REACT_APP_API_URL}/api/item/${itemData._id}`,
         formData,
         {
           headers: {

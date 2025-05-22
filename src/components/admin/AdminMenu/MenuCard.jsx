@@ -14,7 +14,7 @@ const MenuCard = ({ menu, onDelete }) => {
   const handleDelete = async () => {
     if (window.confirm('Are you sure you want to delete this menu?')) {
       try {
-        await axios.delete(`http://localhost:3000/api/menu/${menu._id}`);
+        await axios.delete(`${process.env.REACT_APP_API_URL}/api/menu/${menu._id}`);
         onDelete();
       } catch (err) {
         console.error('Error deleting menu', err);

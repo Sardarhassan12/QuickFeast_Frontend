@@ -20,7 +20,7 @@ const UserMenu = () => {
     const fetchMenuItems = async () => {
       setIsLoading(true);
       try {
-        const response = await axios.get(`http://localhost:3000/api/items?menuId=${menuId}`);
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/items?menuId=${menuId}`);
         const availableItems = response.data.filter(item => item.availability === 'available');
 
         const grouped = availableItems.reduce((acc, item) => {

@@ -14,7 +14,7 @@ const MenuItem = ({ item }) => {
         <div className="w-full h-32 bg-gray-400 flex items-center justify-center rounded-md mb-4">
           {item?.imagePath ? (
             <img
-              src={`http://localhost:3000${item.imagePath}`}
+              src={`${process.env.REACT_APP_API_URL}${item.imagePath}`}
               alt={item.itemName}
               className="w-full h-full object-cover rounded-md"
             />

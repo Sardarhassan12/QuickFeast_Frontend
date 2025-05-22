@@ -21,7 +21,7 @@ const OrderDashboard = () => {
       setIsLoading(true);
       setError(null);
       try {
-        const response = await axios.get('http://localhost:3000/api/orders');
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/orders`);
         setOrders(response.data);
       } catch (error) {
         console.error('Error fetching orders:', error);
@@ -37,7 +37,7 @@ const OrderDashboard = () => {
 
   const handleStatusUpdate = async (orderId, newStatus) => {
     try {
-      const response = await axios.patch(`http://localhost:3000/api/orders/${orderId}`, {
+      const response = await axios.patch(`${process.env.REACT_APP_API_URL}/api/orders/${orderId}`, {
         status: newStatus,
       });
       setOrders(

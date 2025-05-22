@@ -12,7 +12,7 @@ const MenuModal = ({ isModal, setIsModal }) => {
   const generateMenu = async () => {
     try {
       const itemIds = allItems.map(item => item._id);
-      const response = await axios.post('http://localhost:3000/api/menu', {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/menu`, {
         title: 'Main Menu - ' + new Date().toLocaleString(),
         itemIds,
       });

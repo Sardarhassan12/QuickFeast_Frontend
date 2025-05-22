@@ -28,7 +28,7 @@ const AddItem = ({ isModal, setIsModal, fetchItems }) => {
         formData.append('image', data.image[0]);
       }
 
-      const response = await axios.post('http://localhost:3000/api/item', formData, {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/item`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         }
